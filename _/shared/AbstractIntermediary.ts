@@ -2,6 +2,8 @@ import {IntTypeEnum} from "./IntermediaryType";
 import {IntDropdownType} from "./IntDropdownType";
 
 abstract class AbstractIntermediary {
+    readonly id?: string;
+    readonly createdAt?: string;
     readonly name: string;
     readonly order: number;
     readonly type: IntTypeEnum;
