@@ -5,7 +5,7 @@ export class Len255Text {
 
     private constructor(readonly value: string) {}
 
-    static make(value:string) {
+    static make(value:string): Len255Text {
         if (typeof value !== 'string' || value.length < 1 || value.length > 255) {
             throw `'${value}' isn't a correct string value`;
         }
