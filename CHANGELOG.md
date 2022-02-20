@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- type for Intermediaty Type field
+- type for Intermediary 'Dropdown.Value' field
+- type for Intermediary 'Range.From' field
+- type for Intermediary 'Range.To' field
+- type for Intermediary 'Range.Step' field
+- type for Intermediary 'Type' field
 - dep: [jest]
 - dep: [typescript]
 - dep: [@types/jest]
