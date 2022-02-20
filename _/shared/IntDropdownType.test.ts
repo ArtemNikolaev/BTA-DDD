@@ -23,26 +23,6 @@ describe('Intermediary Dropdown Type', () => {
     });
 
     describe('value', () => {
-        [
-            {option: 'asdfasdfasd', value: 0},
-            {option: 'asdfasdfasd', value: -0},
-            {option: 'asdfasdfasd', value: 1},
-            {option: 'asdfasdfasd', value: -1},
-            {option: 'asdfasdfasd', value: 0.000007},
-            {option: 'asdfasdfasd', value: -0.000007},
-        ].forEach(intermediate => it(
-            `should be correct for 'value: ${intermediate.value}' value`,
-            () => expect(IntDropdownType.make(intermediate)).toBeInstanceOf(IntDropdownType)
-        ));
-
-        [
-            {option: 'asdfasdfasd', value: 0.1000006},
-            {option: 'asdfasdfasd', value: -0.1000006},
-            {option: 'asdfasdfasd', value: 0.0000006},
-            {option: 'asdfasdfasd', value: -0.0000006},
-        ].forEach(intermediate => it(
-            `should be correct for 'value: ${intermediate.value}'`,
-            () => expect(() => IntDropdownType.make(<IntDropdownType>intermediate)).toThrow()
-        ));
-    });
+        it('No needs to test value, because we test in all in Decimal6Float',() => {})
+    })
 });
