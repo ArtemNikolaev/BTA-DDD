@@ -21,8 +21,4 @@ describe('Intermediary Dropdown Type', () => {
             () => expect(() => IntDropdownType.make(<IntDropdownType>intermediate)).toThrow()
         ));
     });
-
-    describe('value', () => {
-        it('No needs to test value, because we test in all in Decimal6Float',() => {})
-    })
 });

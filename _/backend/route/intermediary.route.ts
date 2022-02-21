@@ -6,8 +6,8 @@ import {deleteIntermediary} from "../view/deleteIntermediary";
 import {updateIntermediary} from "../view/updateIntermediary";
 import {intermediaryUpdateMiddleware} from "../middleware/intermediaryUpdateMiddleware";
 import {getIntermediary} from "../view/getIntermediary";
+import express = require('express')
 
-const express = require('express')
 const router = express.Router()
 
 router.param('intermediaryId', intermediaryIdMiddleware)

@@ -1,7 +1,7 @@
-const express = require('express');
+import express = require('express');
+import bodyParser = require('body-parser');
+import intermediary = require('./route/intermediary.route');
 const app = express();
-const bodyParser = require('body-parser');
-const intermediary = require('./route/intermediary.route');
 
 app.use(bodyParser.json());
 app.use('/intermediary', intermediary);

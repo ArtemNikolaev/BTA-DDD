@@ -23,8 +23,6 @@ describe('Dropdown Intermediary', () => {
         expect(() => DropdownIntermediary.make(<DropdownIntermediary>throwIntermediary)).toThrow();
     })
 
-    it('no need to test other class fields, because we test it in fields type classes', () => {});
-
     it('should work correctly for name update', () => {
         const obj = DropdownIntermediary.make(<DropdownIntermediary>intermediary);
         const objUpdate = DropdownIntermediary.make(<DropdownIntermediary>Object.assign({}, intermediary, {name: 'bla1'}))
