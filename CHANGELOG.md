@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.0] - 2022-02-21
 ### Added
 - Get Intermediary List fn
 - Creating Intermediary fn
@@ -25,3 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [ts-node]: https://typestrong.org/ts-node/
 [expressjs]: https://expressjs.com/
 [body-parser]: https://github.com/expressjs/body-parser#readme
+
+[Unreleased]: https://github.com/ArtemNikolaev/BTA-DDD/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ArtemNikolaev/BTA-DDD/releases/tag/v1.0.0
