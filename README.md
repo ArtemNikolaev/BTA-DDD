@@ -22,7 +22,7 @@ Now it used on backend, but all types has isomorphic nature, so it easily can be
       * dropdown: [IntDropdownType\[\]](_/shared/IntDropdownType.ts)
 
 ## Up and Run
-```javascript
+```
     // run app
     npm install
     npm start

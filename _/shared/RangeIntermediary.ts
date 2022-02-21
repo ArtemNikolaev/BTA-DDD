@@ -4,6 +4,8 @@ import {Len255Text} from "./Len255Text";
 import {PositiveInt} from "./PositiveInt";
 import {Decimal6Float} from "./Decimal6Float";
 
+const accuracy = 1000000;
+
 declare const RangeIntermediarySymbol: unique symbol;
 
 export class RangeIntermediary extends AbstractRangeIntermediary {
@@ -33,7 +35,18 @@ export class RangeIntermediary extends AbstractRangeIntermediary {
 
         RangeIntermediary.validateRange(from, to, step);
 
+        if (step < this.step) {
+            throw '"step" value can not be decresed';
+        }
+
+        if (from > this.from) {
+            throw '"from" value can not be increased';
+        }
+
         const result = Object.assign({}, this, { name, order, from, to, step });
+        if ((this.from * accuracy - result.from * accuracy) % (result.step * accuracy) !== 0) {
+            throw 'new "form" should include old "from" value in step updated range';
+        }
 
         return RangeIntermediary.make(result);
     }
