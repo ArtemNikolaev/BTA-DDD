@@ -3,6 +3,7 @@ import {IntTypeEnum} from "./IntermediaryType";
 
 describe('Range Intermediary', () => {
     const intermediary  = {
+        id: 'bla',
         name: 'bla',
         order: 1,
         type: IntTypeEnum.RANGE,
@@ -42,7 +43,31 @@ describe('Range Intermediary', () => {
         expect(() => RangeIntermediary.make(<RangeIntermediary>throwIntermediary)).toThrow();
     })
 
+    it('should work correctly for name update', () => {
+        const obj = RangeIntermediary.make(<RangeIntermediary>intermediary);
+        const objUpdate = RangeIntermediary.make(<RangeIntermediary>Object.assign({}, intermediary, {name: 'bla1'}))
 
+        expect(obj.update(objUpdate)).toBeInstanceOf(RangeIntermediary);
+    })
 
-    it('no need to test other class fields, because we test it in fields type classes', () => {});
+    it('should work correctly for order update', () => {
+        const obj = RangeIntermediary.make(<RangeIntermediary>intermediary);
+        const objUpdate = RangeIntermediary.make(<RangeIntermediary>Object.assign({}, intermediary, {order: 12}))
+
+        expect(obj.update(objUpdate)).toBeInstanceOf(RangeIntermediary);
+    })
+
+    it('should thorw for id change', () => {
+        const obj = RangeIntermediary.make(<RangeIntermediary>intermediary);
+        const objUpdate = RangeIntermediary.make(<RangeIntermediary>Object.assign({}, intermediary, {id: 'bla2'}))
+
+        expect(() => obj.update(objUpdate)).toThrow();
+    })
+
+    it('should throw for type change', () => {
+        const obj = RangeIntermediary.make(<RangeIntermediary>intermediary);
+        const objUpdate = Object.assign({}, intermediary, {type: IntTypeEnum.DROPDOWN})
+
+        expect(() => obj.update(<RangeIntermediary>objUpdate)).toThrow();
+    })
 });

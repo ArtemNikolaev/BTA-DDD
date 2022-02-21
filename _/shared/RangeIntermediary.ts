@@ -16,8 +16,26 @@ export class RangeIntermediary extends AbstractRangeIntermediary {
         readonly from: number,
         readonly to: number,
         readonly step: number,
+        readonly id,
+        readonly createdAt,
     ) {
         super();
+    }
+
+    update({id, name, order, type, from, to, step}: RangeIntermediary): RangeIntermediary {
+        if (!this.id || !id || this.id !== id) {
+            throw 'id unexist or wrong'
+        }
+
+        if (this.type !== type) {
+            throw 'you can not change type of intermediary';
+        }
+
+        RangeIntermediary.validateRange(from, to, step);
+
+        const result = Object.assign({}, this, { name, order, from, to, step });
+
+        return RangeIntermediary.make(result);
     }
 
     static validateRange(from, to, step) {
@@ -29,7 +47,7 @@ export class RangeIntermediary extends AbstractRangeIntermediary {
         }
     }
 
-    static make({name, order, type, from, to, step}: Partial<RangeIntermediary>): RangeIntermediary {
+    static make({name, order, type, from, to, step, id, createdAt}: Partial<RangeIntermediary>): RangeIntermediary {
         if (type !== IntTypeEnum.RANGE) {
             throw `Intermediary type should be ${IntTypeEnum.RANGE}`;
         }
@@ -46,6 +64,8 @@ export class RangeIntermediary extends AbstractRangeIntermediary {
             from,
             to,
             step,
+            id,
+            createdAt,
         )
     }
 }
