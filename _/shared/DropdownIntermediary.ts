@@ -20,7 +20,7 @@ export class DropdownIntermediary extends AbstractDropdownIntermediary{
         super();
     }
 
-    update({ id, name, order, type }: DropdownIntermediary): DropdownIntermediary {
+    update({ id, name, order, type, dropdown }: DropdownIntermediary): DropdownIntermediary {
         if (!this.id || !id || this.id !== id) {
             throw 'id unexist or wrong';
         }
@@ -29,7 +29,7 @@ export class DropdownIntermediary extends AbstractDropdownIntermediary{
             throw 'you can not change type of intermediary';
         }
 
-        const result = Object.assign({}, this, {name, order})
+        const result = Object.assign({}, this, {name, order, dropdown})
 
         return DropdownIntermediary.make(result);
     }
