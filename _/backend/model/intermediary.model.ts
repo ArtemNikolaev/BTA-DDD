@@ -18,8 +18,8 @@ class IntermediaryModel {
     }
 
     async updateIntermediary(intermediary: Intermediary): Promise<Intermediary> {
-        this.value[intermediary.id] = intermediary;
-        return Promise.resolve(intermediary);
+        Object.assign(this.value[intermediary.id], intermediary);
+        return Promise.resolve(this.value[intermediary.id]);
     }
 
     async deleteIntermediary(id) {

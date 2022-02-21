@@ -5,6 +5,7 @@ export function intermediaryMiddleware(req, res, next) {
         req.intermediary = intermediaryFactory(req.body);
         next();
     } catch(e) {
+        console.log({e});
         res.sendStatus(400);
     }
 }
